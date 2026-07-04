@@ -309,17 +309,24 @@ h1 {
   font-size: 14px;
   font-weight: 800;
   text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .logos {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 18px;
+  justify-content: center;
+  align-items: center;
+  row-gap: 16px;
+  column-gap: clamp(24px, 3vw, 48px);
   color: var(--accent-dark);
   font-family: "Playfair Display", Georgia, serif;
-  font-size: clamp(20px, 2.2vw, 30px);
+  font-size: clamp(15px, 1.4vw, 22px);
   font-weight: 700;
+}
+
+.logos span {
+  white-space: nowrap;
 }
 
 .section-heading {
