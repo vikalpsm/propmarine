@@ -65,9 +65,9 @@ img {
 }
 
 .site-header.nav-open {
-  background: var(--bg);
-  box-shadow: 0 10px 30px rgba(24, 32, 29, 0.08);
-  color: var(--ink);
+  background: rgba(19, 24, 22, 0.72);
+  box-shadow: none;
+  color: #fff;
   backdrop-filter: none;
 }
 
@@ -424,6 +424,7 @@ blockquote cite {
   width: 100%;
   height: 320px;
   object-fit: cover;
+  object-position: top center;
 }
 
 .leader-card h3,
@@ -642,8 +643,10 @@ blockquote cite {
     flex-direction: column;
     padding: 96px 24px 32px;
     gap: 0;
-    background: var(--bg);
-    color: var(--ink);
+    background: rgba(19, 24, 22, 0.72);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    color: #fff;
     overflow-y: auto;
     transform: translateY(-12px);
     opacity: 0;
@@ -659,16 +662,16 @@ blockquote cite {
 
   .nav-links a {
     padding: 16px 0;
-    border-bottom: 1px solid var(--line);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
     font-size: 17px;
   }
 
   .nav-cta-mobile {
     display: inline-flex;
-    align-self: flex-start;
+    align-self: flex-end;
     margin-top: 22px;
-    border: 1px solid var(--accent);
-    color: var(--accent);
+    border: 1px solid var(--gold);
+    color: var(--gold);
   }
 
   .nav-close {
