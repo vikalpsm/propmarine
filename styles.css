@@ -294,39 +294,94 @@ h1 {
 }
 
 .logo-strip {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  align-items: center;
-  gap: 34px;
-  padding: 28px clamp(20px, 6vw, 92px);
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  padding: 34px 0;
   border-block: 1px solid var(--line);
   background: var(--surface-soft);
+  overflow: hidden;
 }
 
 .logo-strip p {
   margin: 0;
+  padding: 0 clamp(20px, 6vw, 92px);
   color: var(--muted);
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 800;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  white-space: nowrap;
+  text-align: center;
 }
 
-.logos {
+.logo-marquee {
+  position: relative;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  width: 100%;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent 0,
+    #000 64px,
+    #000 calc(100% - 64px),
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    90deg,
+    transparent 0,
+    #000 64px,
+    #000 calc(100% - 64px),
+    transparent 100%
+  );
+}
+
+.logo-track {
+  display: flex;
+  flex-shrink: 0;
   align-items: center;
-  row-gap: 16px;
-  column-gap: clamp(24px, 3vw, 48px);
+  gap: clamp(28px, 3vw, 44px);
+  padding-right: clamp(28px, 3vw, 44px);
+  animation: logo-scroll 42s linear infinite;
+}
+
+.logo-marquee:hover .logo-track {
+  animation-play-state: paused;
+}
+
+.logos span,
+.logo-track span {
+  flex-shrink: 0;
+  white-space: nowrap;
+  padding: 10px 20px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
   color: var(--accent-dark);
   font-family: "Playfair Display", Georgia, serif;
-  font-size: clamp(15px, 1.4vw, 22px);
+  font-size: clamp(14px, 1.1vw, 17px);
   font-weight: 700;
+  transition: border-color 160ms ease, color 160ms ease, background 160ms ease;
 }
 
-.logos span {
-  white-space: nowrap;
+.logo-track span:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--surface-soft);
+}
+
+@keyframes logo-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-track {
+    animation: none;
+  }
 }
 
 .section-heading {
@@ -713,7 +768,6 @@ blockquote cite {
   }
 
   .about-section,
-  .logo-strip,
   .footer {
     grid-template-columns: 1fr;
   }
