@@ -81,8 +81,8 @@ img {
 
 .brand-mark {
   display: block;
-  width: 42px;
-  height: 42px;
+  width: 64px;
+  height: 64px;
   object-fit: contain;
 }
 
@@ -540,6 +540,11 @@ blockquote cite {
   margin-bottom: 14px;
 }
 
+.footer-brand .brand-mark {
+  width: 78px;
+  height: 78px;
+}
+
 .services-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -975,3 +980,31 @@ blockquote cite {
   color: var(--ink);
 }
 
+.thank-you-container {
+  text-align: center;
+}
+
+.thank-you-hero {
+  display: grid;
+  justify-items: center;
+}
+
+.thank-you-hero h1,
+.thank-you-hero p {
+  width: 100%;
+  text-align: center;
+}
+
+.thank-you-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.thank-you-actions .button-secondary {
+  border-color: var(--accent-dark);
+  color: var(--accent-dark);
+}
