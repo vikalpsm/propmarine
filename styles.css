@@ -963,8 +963,38 @@ h1 {
     height: 300px;
   }
 
+  .why-choose-media {
+    min-height: 200px;
+  }
+
+  .why-choose-panel {
+    padding: 40px 20px;
+  }
+
+  .why-choose-panel h2 {
+    max-width: none;
+    margin-bottom: 26px;
+    font-size: 26px;
+  }
+
   .why-choose-grid {
     grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .why-choose-icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 10px;
+  }
+
+  .why-choose-icon svg {
+    width: 19px;
+    height: 19px;
+  }
+
+  .why-choose-item h3 {
+    font-size: 16.5px;
   }
 
   .brand span:last-child {
