@@ -25,7 +25,24 @@
           <span></span>
         </button>
         <a href="#about">About</a>
-        <a href="#services">Services</a>
+        <div class="nav-dropdown">
+          <button
+            class="nav-dropdown-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="services-dropdown-menu"
+          >
+            Services
+            <svg class="nav-dropdown-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="nav-dropdown-menu" id="services-dropdown-menu">
+            <a href="#service-residential">Residential Properties Buying &amp; Selling</a>
+            <a href="#service-commercial">Commercial Properties Buying &amp; Selling</a>
+            <a href="#service-renting">Letting or Renting</a>
+            <a href="#service-cma">Comparative Market Analysis</a>
+            <a href="#service-loan">Home Loan Assistance</a>
+          </div>
+        </div>
         <a class="nav-cta nav-cta-mobile" href="#contact">Get a Proposal</a>
       </nav>
       <button
@@ -249,7 +266,7 @@
           <h2>Complete support built for real estate sales cycles.</h2>
         </div>
         <div class="services-grid">
-          <article class="service-card">
+          <article class="service-card" id="service-residential">
             <span class="service-icon">01</span>
             <h3>Residential Properties Buying & Selling</h3>
             <p>
@@ -257,7 +274,7 @@
               from shortlisting to final registration.
             </p>
           </article>
-          <article class="service-card">
+          <article class="service-card" id="service-commercial">
             <span class="service-icon">02</span>
             <h3>Commercial Properties Buying & Selling</h3>
             <p>
@@ -265,7 +282,7 @@
               negotiation support for both parties.
             </p>
           </article>
-          <article class="service-card">
+          <article class="service-card" id="service-renting">
             <span class="service-icon">03</span>
             <h3>Letting or Renting</h3>
             <p>
@@ -273,7 +290,7 @@
               looking to rent out their property.
             </p>
           </article>
-          <article class="service-card">
+          <article class="service-card" id="service-cma">
             <span class="service-icon">04</span>
             <h3>Comparative Market Analysis</h3>
             <p>
@@ -281,7 +298,7 @@
               position of clarity, not guesswork.
             </p>
           </article>
-          <article class="service-card">
+          <article class="service-card" id="service-loan">
             <span class="service-icon">05</span>
             <h3>Home Loan Assistance</h3>
             <p>
