@@ -201,6 +201,19 @@ img {
   position: relative;
   width: min(100%, 780px);
   max-width: 780px;
+  padding-left: 26px;
+  border-left: 3px solid var(--gold);
+}
+
+.hero-brand {
+  display: block;
+  margin-bottom: 6px;
+  color: #fff;
+  font-family: "Playfair Display", Georgia, serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: clamp(32px, 5vw, 58px);
+  line-height: 1.1;
 }
 
 h1,
@@ -224,11 +237,18 @@ h1 {
   overflow-wrap: anywhere;
 }
 
+.hero-tagline {
+  margin-bottom: 18px;
+  color: var(--gold);
+  font-size: clamp(26px, 3.6vw, 44px);
+}
+
 .hero p {
   max-width: 620px;
   margin-bottom: 30px;
   color: rgba(255, 255, 255, 0.84);
   font-size: clamp(17px, 2vw, 21px);
+  font-style: italic;
 }
 
 .hero-actions {
@@ -267,34 +287,100 @@ h1 {
 
 .about-section {
   display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
-  gap: 48px;
+  grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+  gap: 56px;
   align-items: center;
   background: var(--surface);
 }
 
-.about-stats {
-  display: grid;
-  gap: 16px;
+.about-section .section-copy {
+  max-width: 620px;
 }
 
-.about-stats div {
-  border-left: 4px solid var(--gold);
-  background: var(--bg);
-  padding: 24px 26px;
-  border-radius: var(--radius);
-}
-
-.about-stats strong {
+.about-section .section-label::after {
+  content: "";
   display: block;
-  color: var(--accent-dark);
-  font-size: 38px;
-  line-height: 1;
+  width: 60px;
+  height: 3px;
+  margin-top: 10px;
+  background: var(--gold);
 }
 
-.about-stats span {
+.about-tagline {
+  margin-bottom: 18px;
+  color: var(--accent);
+  font-style: italic;
+  font-size: clamp(19px, 2.2vw, 24px);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.about-section p {
   color: var(--muted);
+  margin-bottom: 22px;
+}
+
+.about-checklist {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 20px;
+  margin: 0 0 30px;
+  padding: 0;
+  list-style: none;
+}
+
+.about-checklist li {
+  position: relative;
+  padding-left: 26px;
+  color: var(--ink);
+  font-style: italic;
+  font-size: 15px;
+}
+
+.about-checklist li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  background: var(--gold);
+  color: #fff;
+  font-size: 11px;
+  font-style: normal;
   font-weight: 700;
+}
+
+.about-media {
+  position: relative;
+  min-height: 360px;
+}
+
+.about-media img {
+  position: absolute;
+  border: 6px solid var(--surface);
+  box-shadow: var(--shadow);
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.about-media-back {
+  top: 0;
+  right: 0;
+  width: 78%;
+  height: 300px;
+}
+
+.about-media-front {
+  left: 0;
+  bottom: 0;
+  width: 52%;
+  height: 220px;
+  z-index: 1;
 }
 
 .logo-strip {
@@ -1004,10 +1090,19 @@ h1 {
     transform: rotate(-45deg);
   }
 
-  .about-section,
   .footer-main,
-  .why-choose-section {
+  .why-choose-section,
+  .about-section {
     grid-template-columns: 1fr;
+  }
+
+  .about-section {
+    gap: 36px;
+  }
+
+  .about-media {
+    min-height: 280px;
+    order: -1;
   }
 
   .why-choose-media {
@@ -1089,6 +1184,22 @@ h1 {
     font-size: 16.5px;
   }
 
+  .about-checklist {
+    grid-template-columns: 1fr;
+  }
+
+  .about-media {
+    min-height: 240px;
+  }
+
+  .about-media-back {
+    height: 220px;
+  }
+
+  .about-media-front {
+    height: 160px;
+  }
+
   .brand-card {
     padding: 24px 18px;
   }
@@ -1114,6 +1225,7 @@ h1 {
 
   .hero-content {
     max-width: 354px;
+    padding-left: 16px;
   }
 
   h1 {
